@@ -24,4 +24,12 @@ class CarController extends Controller
         return view('pages.car-show', compact('car'));
 
     }
+
+    public function destroy($id) {
+
+        $car = Car::findOrFail($id);
+        $car -> delete();
+        Mail::to('prova@mail.com')->send(new CarDelete($car-> name,$car -> color, $car -> engine, $car -> price));
+        return redirect() -> route('cars.index');
+    }
 }

@@ -6,9 +6,9 @@
 
         <p>Modello auto: {{$car -> name}}</p>
         @auth
-            <button>
-                <a href="{{route('car.show', $car -> id)}}">Details</a>            
-            </button>      
+            <a href="{{route('car.show', $car -> id)}}">Details</a>            
+            
+            <a href="{{route('car.destroy', $car -> id)}}">Delete</a>
         @endauth
 
         

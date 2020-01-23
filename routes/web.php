@@ -23,3 +23,5 @@ Route::get('/cars', 'CarController@index')->name ('cars.index');
 
 
 Route::get('/cars/{id}', 'CarController@show')->name ('car.show') -> middleware('auth');
+
+Route::get('/cars/{id}/delete', 'CarController@destroy')->name ('car.destroy') -> middleware('auth');
